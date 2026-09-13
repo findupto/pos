@@ -8,5 +8,6 @@ contextBridge.exposeInMainWorld('posDesktop', {
   print: (payload) => ipcRenderer.invoke('printer:print', payload),
   aiKeyStatus: () => ipcRenderer.invoke('ai:key:status'),
   setAIKey: (key) => ipcRenderer.invoke('ai:key:set', key),
-  aiCommand: (payload) => ipcRenderer.invoke('ai:command', payload)
+  aiCommand: (payload) => ipcRenderer.invoke('ai:command', payload),
+  aiRealtimeConnect: (payload) => ipcRenderer.invoke('ai:realtime:connect', payload)
 });
