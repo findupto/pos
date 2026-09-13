@@ -5,5 +5,8 @@ contextBridge.exposeInMainWorld('posDesktop', {
   closeCustomerDisplay: () => ipcRenderer.invoke('display:close'),
   version: () => ipcRenderer.invoke('app:version'),
   getPrinters: () => ipcRenderer.invoke('printers:list'),
-  print: (payload) => ipcRenderer.invoke('printer:print', payload)
+  print: (payload) => ipcRenderer.invoke('printer:print', payload),
+  aiKeyStatus: () => ipcRenderer.invoke('ai:key:status'),
+  setAIKey: (key) => ipcRenderer.invoke('ai:key:set', key),
+  aiCommand: (payload) => ipcRenderer.invoke('ai:command', payload)
 });
